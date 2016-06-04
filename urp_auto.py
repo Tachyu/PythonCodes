@@ -21,8 +21,8 @@ from splinter import browser
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-#登陆页面
-loginpage = r"http://121.194.57.131/"
+	#登陆页面
+	loginpage = r"http://121.194.57.131/"
 targetpage = r"http://121.194.57.131/loginAction.do"							#0
 my_class_url = r'http://121.194.57.131/xskbAction.do?actionType=1'				#1
 my_grade_url = r'http://121.194.57.131/gradeLnAllAction.do?type=ln&oper=qb'		#2
