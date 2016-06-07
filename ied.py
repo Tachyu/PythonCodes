@@ -36,15 +36,9 @@ vrifycodeUrl = "http://121.194.57.131/validateCodeAction.do?"
 # 5.选课
 # 6.评教
 
-targetpage = r'//*[@id="moduleTab"]/tbody/tr/td[1]/a'                        #0
 my_class_xp = r'本学期课表'              #1
-my_grade_xp = r'//*[@id="divCoHome"]/table/tbody/tr/td[1]/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/table[2]/tbody/tr/td/a'     #2
-my_info_xp = r'http://121.194.57.131/xjInfoAction.do?oper=xjxx'                #3
-ava_classroom_xp = r'//*[@id="divCoHome"]/table/tbody/tr/td[1]/table/tbody/tr[7]/td/table/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/table[2]/tbody/tr/td/a'       #4
-cho_class_xp = r'//*[@id="moduleTab"]/tbody/tr/td[3]/a'           #5
-list_wj_xp = r'//*[@id="divCoHome"]/table/tbody/tr/td[1]/table/tbody/tr[5]/td/table/tbody/tr/td/table/tbody/tr/td/table[2]/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr/td/a'              #6
 
-iedriver = "E:\Python Sourse File\IEDriverServer.exe"
+iedriver = "E:\IEDriverServer.exe"
 os.environ["webdriver.ie.driver"] = iedriver
 driver = webdriver.Ie(iedriver)
     
@@ -155,14 +149,6 @@ while True and try_time < 10:
     error_image.save(r'errorReport/' + v_yzm + r'_s2.jpg')
     try_time += 1
 
-url_dic = {
-               0:targetpage,
-	           1:my_class_xp,
-			   2:my_grade_xp,
-			   3:my_info_xp,
-			   4:ava_classroom_xp,
-			   5:cho_class_xp,
-			   6:list_wj_xp}	
 # driver.get(url_dic[choice])
 # driver.find_element_by_name(url_dic[choice])
 time.sleep(1)

@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)http://121.194.57.131/zyxkAction.do -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>已选课程</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css href="zyxkAction_files/project.css">
+<STYLE>DIV {
+	FONT-SIZE: 12px; CLEAR: both; MARGIN: 5px 0px 0px; LINE-HEIGHT: 12px
+}
+A.alt {
+	TEXT-DECORATION: none; BORDER-TOP: #ccc 0px solid; HEIGHT: 20px; BORDER-RIGHT: #ccc 0px solid; WIDTH: 120px; BORDER-BOTTOM: #ccc 0px solid; POSITION: relative; FLOAT: left; COLOR: #333333; TEXT-ALIGN: center; MARGIN: 0px auto; BORDER-LEFT: #ccc 0px solid; onMouseOver: this.className='evenfocus'
+}
+A.alt:hover {
+	TEXT-DECORATION: none; BACKGROUND: #fffbdd; Z-INDEX: 2
+}
+A.alt SPAN {
+	DISPLAY: none
+}
+A.alt:hover SPAN {
+	BORDER-TOP: #ccc 1px solid; HEIGHT: 50px; BORDER-RIGHT: #ccc 1px solid; WIDTH: 100px; BORDER-BOTTOM: #ccc 1px solid; POSITION: absolute; LEFT: 75px; BORDER-LEFT: #ccc 1px solid; Z-INDEX: 1; DISPLAY: block; TOP: 1px; BACKGROUND-COLOR: #fff
+}
+A.alt1 {
+	TEXT-DECORATION: none; BORDER-TOP: #ccc 0px solid; HEIGHT: 20px; BORDER-RIGHT: #ccc 0px solid; WIDTH: 120px; BORDER-BOTTOM: #ccc 0px solid; POSITION: relative; FLOAT: left; COLOR: #333333; TEXT-ALIGN: center; MARGIN: 0px auto; BORDER-LEFT: #ccc 0px solid; onMouseOver: this.className='evenfocus'
+}
+A.alt1:hover {
+	TEXT-DECORATION: none; BACKGROUND: #fffbdd; Z-INDEX: 2
+}
+A.alt1 SPAN {
+	DISPLAY: none
+}
+A.alt1:hover SPAN {
+	BORDER-TOP: #ccc 1px solid; HEIGHT: 50px; BORDER-RIGHT: #ccc 1px solid; WIDTH: 100px; RIGHT: 75px; BORDER-BOTTOM: #ccc 1px solid; POSITION: absolute; BORDER-LEFT: #ccc 1px solid; Z-INDEX: 1; DISPLAY: block; TOP: 1px; BACKGROUND-COLOR: #fff
+}
+</STYLE>
+
+<SCRIPT type=text/javaScript>
+    function kcxx(kch, swidth, sheight) {
+    var url = '/kcxxAction.do?kch='+kch;
+    if (swidth == undefined) swidth = "800";
+    if (sheight == undefined) sheight = "600";
+    var sValue = showModalDialog(url, window, 
+    "dialogWidth:" + swidth + "px;dialogHeight:" + sheight + "px;help:no;status:no");
+    if(sValue!=undefined){
+    	alert(sValue);
+    }
+	}
+	function delkc(url){
+	  if(confirm("确实要删除课程吗？")){
+	    document.yxkcform.action=url;
+	    document.yxkcform.submit();
+	  }
+	}
+	function refreshBxxx(){
+	  var tagID = parent.document.getElementById("optionID").value;
+	  window.parent.selectOption(tagID);
+	  window.parent.m_sxxf();
+	}
+	function qpxs(){
+	    parent.document.all.grxkjhif.style.height=window.document.body.scrollHeight;
+	}
+	function m_btxqpxs(){
+	    parent.document.all.yxkcIfra.style.height=window.document.body.scrollHeight;
+	}
+     </SCRIPT>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.16428"></HEAD>
+<BODY style="OVERFLOW: auto" leftMargin=0 topMargin=0 marginheight="0" 
+marginwidth="0">
+<FORM method=post name=yxkcform><!-- 列表开始 -->
+<TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=pageAlign>
+      <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 width="99%" 
+      border=0>
+        <THEAD>
+        <TR>
+          <TH class=sortable width="7%">选择</TH>
+          <TH class=sortable width="7%">课程号</TH>
+          <TH class=sortable>课<BR>序</TH>
+          <TH class=sortable width="20%">课程名</TH>
+          <TH class=sortable width="6%">课程属性</TH>
+          <TH class=sortable>选课<BR>状态</TH>
+          <TH class=sortable width="5%">学分</TH>
+          <TH class=sortable width="5%">学时</TH>
+          <TH class=sortable width="8%">上课教师</TH>
+          <TH class=sortable width="15%">上课时间</TH>
+          <TH class=sortable width="15%">上课地点</TH></TR></THEAD>
+        <TBODY>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD rowSpan=2 align=center></TD>
+          <TD rowSpan=2 align=center>80L130Q</TD>
+          <TD rowSpan=2 align=center>02</TD>
+          <TD rowSpan=2 align=center>计算机网络原理 </TD>
+          <TD rowSpan=2 align=center>必修</TD>
+          <TD rowSpan=2 align=center>置入</TD>
+          <TD rowSpan=2 align=center>4.0</TD>
+          <TD rowSpan=2 align=center>64.0</TD>
+          <TD rowSpan=2 align=center>尹辉* </TD>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-16周上,星期一,1节</SPAN> 
+            1-16周上,星期一......</A></DIV></TD>
+          <TD align=center></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd ?>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-16周上,星期三,2节</SPAN> 
+            1-16周上,星期三......</A></DIV></TD>
+          <TD align=center>&nbsp; </TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD rowSpan=2 align=center><IMG 
+            onclick="delkc('/zyxkAction.do?oper=delkc&amp;kch=80L132Q&amp;kxh=04&amp;type=btx')" 
+            id=btnHelp title=删除 style="CURSOR: hand" 
+            src="zyxkAction_files/delete.gif" align=center> </TD>
+          <TD rowSpan=2 align=center>80L132Q</TD>
+          <TD rowSpan=2 align=center>04</TD>
+          <TD rowSpan=2 align=center>汇编与接口技术 </TD>
+          <TD rowSpan=2 align=center>必修</TD>
+          <TD rowSpan=2 align=center>选中</TD>
+          <TD rowSpan=2 align=center>4.0</TD>
+          <TD rowSpan=2 align=center>64.0</TD>
+          <TD rowSpan=2 align=center>吴为民* </TD>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-16周上,星期二,2节</SPAN> 
+            1-16周上,星期二......</A></DIV></TD>
+          <TD align=center></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd ?>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-16周上,星期四,1节</SPAN> 
+            1-16周上,星期四......</A></DIV></TD>
+          <TD align=center>&nbsp; </TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD rowSpan=2 align=center><IMG 
+            onclick="delkc('/zyxkAction.do?oper=delkc&amp;kch=80L157Q&amp;kxh=04&amp;type=btx')" 
+            id=btnHelp title=删除 style="CURSOR: hand" 
+            src="zyxkAction_files/delete.gif" align=center> </TD>
+          <TD rowSpan=2 align=center>80L157Q</TD>
+          <TD rowSpan=2 align=center>04</TD>
+          <TD rowSpan=2 align=center>数据库系统原理 </TD>
+          <TD rowSpan=2 align=center>必修</TD>
+          <TD rowSpan=2 align=center>选中</TD>
+          <TD rowSpan=2 align=center>4.0</TD>
+          <TD rowSpan=2 align=center>64.0</TD>
+          <TD rowSpan=2 align=center>林友芳* </TD>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-16周上,星期二,4节</SPAN> 
+            1-16周上,星期二......</A></DIV></TD>
+          <TD align=center></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd ?>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-16周上,星期五,1节</SPAN> 
+            1-16周上,星期五......</A></DIV></TD>
+          <TD align=center>&nbsp; </TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD rowSpan=2 align=center><IMG 
+            onclick="delkc('/zyxkAction.do?oper=delkc&amp;kch=80L357Q&amp;kxh=01&amp;type=btx')" 
+            id=btnHelp title=删除 style="CURSOR: hand" 
+            src="zyxkAction_files/delete.gif" align=center> </TD>
+          <TD rowSpan=2 align=center>80L357Q</TD>
+          <TD rowSpan=2 align=center>01</TD>
+          <TD rowSpan=2 align=center>高性能计算导论 </TD>
+          <TD rowSpan=2 align=center>限选</TD>
+          <TD rowSpan=2 align=center>选中</TD>
+          <TD rowSpan=2 align=center>2.0</TD>
+          <TD rowSpan=2 align=center>32.0</TD>
+          <TD rowSpan=2 align=center>艾丽华* </TD>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-8周上,星期一,4节</SPAN> 
+          1-8周上,星期一,......</A></DIV></TD>
+          <TD align=center></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd ?>
+          <TD align=center>
+            <DIV><A class=alt 
+            href="http://121.194.57.131/zyxkAction.do?oper=yxkc&amp;type=btx#" 
+            _fcksavedurl="#"><SPAN>1-8周上,星期三,4节</SPAN> 
+          1-8周上,星期三,......</A></DIV></TD>
+          <TD align=center>&nbsp; 
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM></BODY></HTML>

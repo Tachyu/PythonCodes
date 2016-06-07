@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://121.194.57.131/ctkcAction.do -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE>必修限选补退选</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css href="必修限选补退选_files/project.css">
+<SCRIPT language=javascript src="必修限选补退选_files/prototype.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.16428"></HEAD>
+<BODY onload=m_sxxf(); style="OVERFLOW: auto" leftMargin=0 topMargin=0 
+marginheight="0" marginwidth="0">
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=Linetop></TD></TR></TBODY></TABLE>
+<TABLE id=tblHead class=title cellSpacing=0 cellPadding=0 width="100%" 
+  border=0><TBODY>
+  <TR>
+    <TD width="50%">
+      <TABLE cellSpacing=0 cellPadding=0 align=left border=0>
+        <TBODY>
+        <TR>
+          <TD>&nbsp;</TD>
+          <TD vAlign=middle>&nbsp; &nbsp;已选中课程列表</TD></TR></TBODY></TABLE></TD>
+    <TD width="50%">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=left border=0>
+        <TBODY>
+        <TR>
+          <TD align=right>
+            <DIV id=xfDiv></DIV></TD>
+          <TD width=10 align=right><IMG src="必修限选补退选_files/space.gif"> </TD>
+          <TD width=30 align=right>
+            <DIV id=yxkcXsfs></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=Linetop></TD></TR></TBODY></TABLE><!-- 列表开始 -->
+<TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=pageAlign><IFRAME id=yxkcIfra height=160 
+      src="必修限选补退选_files/zyxkAction.htm" frameBorder=0 width="100%" 
+      name=yxkcIfra scrolling=0></IFRAME></TD></TR></TBODY></TABLE>
+<TABLE id=downLine cellSpacing=0 cellPadding=0 width="100%" align=center 
+border=0>
+  <TBODY>
+  <TR>
+    <TD class=Linetop></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>
+				var activateMenuName = "bxkc";
+				function selectOption(optionID){
+				   activateMenuName=optionID;
+				   initMenu(optionID);
+				   document.getElementById("optionID").value=optionID;
+				}
+				function m_resizeListFrame(xslx){
+					var yxkcxsDiv = document.getElementById("yxkcXsfs");
+   					yxkcxsDiv.innerHTML = "<a href='javascript:;' onclick='m_zcxs()'>正常</a>";
+				    document.frames['yxkcIfra'].m_btxqpxs(); 
+				    document.getElementById("mainTable").style.display="none";
+				    document.getElementById("xklbTitle").style.display="none";
+				    document.getElementById("downLine").style.display="none";
+				}
+				function m_zcxs(){
+						var yxkcxsDiv = document.getElementById("yxkcXsfs");
+   						yxkcxsDiv.innerHTML = "<a href='javascript:;' onclick='m_resizeListFrame()'>全屏</a>";
+						document.getElementById('yxkcIfra').style.height=160; 
+					    document.getElementById("mainTable").style.display="block";
+					    document.getElementById("xklbTitle").style.display="block";
+					    document.getElementById("downLine").style.display="block";
+				}				
+        </SCRIPT>
+<INPUT type=hidden value=bxkc name=optionID> 
+<TABLE id=xklbTitle cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top>
+      <DIV id=header>
+      <DIV id=menuDiv>
+      <UL id=menuList>
+        <DIV id=bxkc>
+        <LI><A onclick="selectOption('bxkc')" 
+        href="http://121.194.57.131/ctkcAction.do?actionType=1&amp;xkjd=bxbtx#" 
+        target=_self>本学期课程</A> </LI></DIV>
+        <DIV id=cxkc>
+        <LI><A onclick="selectOption('cxkc')" 
+        href="http://121.194.57.131/ctkcAction.do?actionType=1&amp;xkjd=bxbtx#" 
+        target=_self>重修课程</A> </LI></DIV>
+        <DIV id=knjkc>
+        <LI><A onclick="selectOption('knjkc')" 
+        href="http://121.194.57.131/ctkcAction.do?actionType=1&amp;xkjd=bxbtx#" 
+        target=_self>跨年级选课</A> </LI></DIV></UL></DIV></DIV></TD>
+    <TD noWrap align=right>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+        <TBODY>
+        <TR>
+          <TD class=Linetop></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<SCRIPT>
+		      
+function lTrim(str){
+   var whitespace = new String(" \t\n\r");
+   var s = new String(str);
+   if (whitespace.indexOf(s.charAt(0)) != -1){
+      var j=0, i = s.length;
+      while (j < i && whitespace.indexOf(s.charAt(j)) != -1){
+         j++;
+      }
+      s = s.substring(j, i);
+   }
+   return s.toString();
+}
+
+function rTrim(str){
+   var whitespace = new String(" \t\n\r");
+   var s = new String(str);
+   if (whitespace.indexOf(s.charAt(s.length-1)) != -1){
+      var i = s.length - 1;
+      while (i >= 0 && whitespace.indexOf(s.charAt(i)) != -1) {
+         i--;
+      }
+      s = s.substring(0, i+1);
+   }
+   return s.toString();
+}
+
+function trim(str){
+   return rTrim(lTrim(str)).toString();
+}
+
+function currentNodeIndex(obj) {
+   if (obj != null) {
+      var parentObj = obj.parentNode;
+      if (parentObj != null) {
+         for (var i = 0; i < parentObj.children.length; i++) {
+            if (parentObj.children[i] == obj) {
+               return i;
+            }
+         }
+      }
+   }
+   return null; 
+}
+
+function initMenu(menuIndex) {
+
+    var menu = document.getElementById("menuList");
+	if ((menu == undefined) ||(menu == null)) {
+		return;
+	}
+      var item = null;
+      if (menuIndex == null) {
+         item = menu.getElementsByTagName("span")[0];
+      } else if (typeof menuIndex == "string") {
+		  var menuIdArray = menuIndex.split(",");
+		  var liList = menu.getElementsByTagName("li");
+		  for (var j = 0; j < liList.length; j++) {
+			  for (var i = 0; i < menuIdArray.length; i++) {
+				  var menuIds = liList[j].parentNode.id.split(",");
+				  for (var k = 0; k < menuIds.length; k++){
+					  if (trim(menuIdArray[i]) == trim(menuIds[k])) {
+						  item = liList[j];
+						  break;
+					  }
+				  }
+				  if (item != null) {
+					  try {
+						  if (menuScroll != null) {
+							 menuScroll.activeMenu = currentNodeIndex(item);
+						  }
+					   } catch (E) {
+					   }
+					  break;
+				  }
+			  }
+		  }		 
+      } else {
+         item = menu.children[menuIndex - 1];
+      }  
+       if (item != null) {
+         if (item.tagName.toLowerCase() != "li") {
+            item = item.getElementsByTagName("li")[0];
+         }         
+         if (item != null) {
+             activateMenu(item);
+         }
+      }
+}
+
+function activateMenu(actMenu) {
+	 if (typeof actMenu == "string") {
+	 	var oActMenu = document.getElementById(actMenu);
+	 	if (oActMenu) {
+	 		for (var i = 0; i < oActMenu.parentNode.children.length; i++) {
+	 			if (oActMenu.parentNode.children[i].firstChild.className == "selected") {
+		 			oActMenu.parentNode.children[i].firstChild.className = "";
+	 			}
+	 		}
+	 		oActMenu.firstChild.className = "selected";
+	 	}
+	 } else {
+	   if (actMenu.parentNode.className == "submenu") {
+	      actMenu.firstChild.className="selected";
+	      actMenu.parentNode.parentNode.className = "selected";
+	   } else {
+	      for (var i = 0; i < actMenu.parentNode.parentNode.children.length; i++) {
+	 			if (actMenu.parentNode.parentNode.children[i].firstChild.className == "selected") {
+		 			actMenu.parentNode.parentNode.children[i].firstChild.className = "";
+	 			}
+	 		}
+	      actMenu.className = "selected";
+	      selectedBody(actMenu.parentNode.id);
+	   }
+   }
+}
+//新添加函数: 根据传来的选中的标签的头部的标示字符串 选中相应的body
+var initIframeArray = new Array();
+function selectedBody(flag){
+   var ishave = false;
+   secBoard(flag);
+   if(!ishave){
+      if('kycgwh' != flag&&'zzxxwh' != flag)
+         initIframeArray.push(flag);
+      document.getElementById(flag+"_").src = document.getElementById(flag+"_").srcFlag;
+       
+   }      
+}
+
+function secBoard(flag)
+{
+ var mT = document.getElementById("mainTable");
+
+ for(i=0;i<mT.tBodies.length;i++){
+   mT.tBodies[i].style.display="none";
+ }
+   eval("document.getElementById('"+flag+"_').parentNode.parentNode.parentNode.style.display='block'"); 
+}
+
+</SCRIPT>
+
+<TABLE id=mainTable class=main_tab height=400 cellSpacing=0 cellPadding=0 
+width="100%" align=center border=0>
+  <TBODY style="DISPLAY: block">
+  <TR>
+    <TD vAlign=top align=center><IFRAME id=bxkc_ height="100%" 
+      src="必修限选补退选_files/bxXxBtxAction.htm" frameBorder=0 width="100%" 
+      align=center 
+  srcFlag="/bxXxBtxAction.do?actionType=2"></IFRAME><BR></TD></TR></TBODY>
+  <TBODY style="DISPLAY: none">
+  <TR>
+    <TD vAlign=top align=center><IFRAME id=cxkc_ height="100%" 
+      src="about:blank" frameBorder=0 width="100%" align=center 
+      srcFlag="/bxXxBtxAction.do?actionType=4"></IFRAME></TD></TR></TBODY>
+  <TBODY style="DISPLAY: none">
+  <TR>
+    <TD vAlign=top align=center><IFRAME id=knjkc_ height="100%" 
+      src="必修限选补退选_files/bxXxBtxAction(1).htm" frameBorder=0 width="100%" 
+      align=center 
+  srcFlag="/bxXxBtxAction.do?actionType=5"></IFRAME></TD></TR></TBODY></TABLE>
+<SCRIPT>
+	initMenu(activateMenuName);
+	var yxkcxsDiv = document.getElementById("yxkcXsfs");
+    yxkcxsDiv.innerHTML = "<a href='javascript:;' onclick='m_resizeListFrame()'>全屏</a>";
+	// 刷新待选课程列表
+	function sxifa(value){
+	  document.getElementById('grxkjhif').src="/zyxkAction.do?oper=yxkc&type=yx";
+	}	
+
+    // 刷新已选课程列表
+    function sxyxkc(){    
+      alert("保存成功");
+      var yxkc = document.getElementById("grxkjhif");
+      yxkc.src = "/zyxkAction.do?oper=yxkc&type=yx" ;
+      selectOption(activateMenuName);
+    }
+    function m_sxxf(){
+       	var url = "ctkcAction.do?actionType=4";  
+           var request = new Ajax.Request(url, {method:"post",onComplete:onComplete});   
+           var readyState  = request.transport.readyState ;   
+           if(readyState != 4) {   
+				//$("loading").style.display = "block";  
+           }   
+    }
+    function onComplete(transport) {   
+            var readyState = transport.readyState;   
+            if(readyState == 4) {    
+                if(transport.status == 200) {   
+                    //$("loading").style.display = "none";   
+                }   
+            }   
+            a = transport.responseText; 
+            var xfDIV = document.getElementById("xfDIV"); 
+            xfDIV.innerHTML = a;
+        } 
+</SCRIPT>
+</BODY></HTML>

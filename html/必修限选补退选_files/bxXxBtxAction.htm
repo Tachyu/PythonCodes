@@ -1,0 +1,941 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://121.194.57.131/bxXxBtxAction.do -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+<TITLE></TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type><LINK 
+rel=stylesheet type=text/css href="bxXxBtxAction_files/project.css">
+<SCRIPT language=javascript src="bxXxBtxAction_files/prototype.js"></SCRIPT>
+
+<STYLE>DIV {
+	FONT-SIZE: 12px; CLEAR: both; MARGIN: 5px 0px 0px; LINE-HEIGHT: 12px
+}
+A.alt {
+	TEXT-DECORATION: none; BORDER-TOP: #ccc 0px solid; HEIGHT: 30px; BORDER-RIGHT: #ccc 0px solid; WIDTH: 80px; BORDER-BOTTOM: #ccc 0px solid; POSITION: relative; FLOAT: left; COLOR: #333333; TEXT-ALIGN: center; MARGIN: 0px auto; BORDER-LEFT: #ccc 0px solid; onMouseOver: this.className='evenfocus'
+}
+A.alt:hover {
+	TEXT-DECORATION: none; BACKGROUND: #fffbdd; Z-INDEX: 2
+}
+A.alt SPAN {
+	DISPLAY: none
+}
+A.alt:hover SPAN {
+	BORDER-TOP: #ccc 1px solid; HEIGHT: 50px; BORDER-RIGHT: #ccc 1px solid; WIDTH: 100px; BORDER-BOTTOM: #ccc 1px solid; POSITION: absolute; LEFT: 75px; BORDER-LEFT: #ccc 1px solid; Z-INDEX: 1; DISPLAY: block; TOP: 1px; BACKGROUND-COLOR: #fff
+}
+A.alt1 {
+	TEXT-DECORATION: none; BORDER-TOP: #ccc 0px solid; HEIGHT: 20px; BORDER-RIGHT: #ccc 0px solid; WIDTH: 80px; BORDER-BOTTOM: #ccc 0px solid; POSITION: relative; FLOAT: left; COLOR: #333333; TEXT-ALIGN: center; MARGIN: 0px auto; BORDER-LEFT: #ccc 0px solid; onMouseOver: this.className='evenfocus'
+}
+A.alt1:hover {
+	TEXT-DECORATION: none; BACKGROUND: #fffbdd; Z-INDEX: 2
+}
+A.alt1 SPAN {
+	DISPLAY: none
+}
+A.alt1:hover SPAN {
+	BORDER-TOP: #ccc 1px solid; HEIGHT: 50px; BORDER-RIGHT: #ccc 1px solid; WIDTH: 100px; RIGHT: 75px; BORDER-BOTTOM: #ccc 1px solid; POSITION: absolute; BORDER-LEFT: #ccc 1px solid; Z-INDEX: 1; DISPLAY: block; TOP: 1px; BACKGROUND-COLOR: #fff
+}
+</STYLE>
+
+<SCRIPT type=text/javascript> 
+function pop_window(kch,kxh,jsm) {
+    var url = '/jsxxAction.do?oper=jsxx&kch='+kch+'&kxh='+kxh+'&jsm='+jsm;
+    var swidth = "800";
+    var sheight = "600";
+    var sValue = showModalDialog(url, window, 
+    "dialogWidth:" + swidth + "px;dialogHeight:" + sheight + "px;help:no;status:no");
+}
+	function savexk(){
+		if($('v_yzm').type == "text"){
+			m_checkyzm();
+		}else{
+			m_submit();
+		}
+	  }
+	  function m_submit(){
+		var sfxk = false;
+		var kcs = document.getElementsByName("kcId");
+		for(var i=0; i<kcs.length; i++){
+		    if(kcs[i].checked){
+		    	sfxk = true;
+		    	break;
+		    }
+		}
+		if(sfxk){
+	    document.bxkForm.action="/bxXxBtxAction.do?actionType=3";
+	    document.bxkForm.submit();
+	    }else{
+	        alert("请先选择一门课程！");
+	    }	  
+	  }
+function openMenu(value){
+		var retract = document.getElementById("tr_"+value);	
+		if (retract.style.display=="none"){
+			retract.style.display = "";
+			document.getElementById("plus_"+value).src = "/img/icon/minus.gif";
+		} else {
+			retract.style.display = "none";
+			document.getElementById("plus_"+value).src = "/img/icon/plus.gif";
+		}
+		}
+function openMenu2(value){
+		var retract = document.getElementById("tr_"+value);	
+		if (retract.style.display=="none"){
+			retract.style.display = "";
+			document.getElementById("plus_2").src = "/img/icon/minus.gif";
+		} else {
+			retract.style.display = "none";
+			document.getElementById("plus_2").src = "/img/icon/plus.gif";
+		}
+		}
+function kcxx(kch, swidth, sheight) {
+    var url = '/kcxxAction.do?kch='+kch;
+    if (swidth == undefined) swidth = "800";
+    if (sheight == undefined) sheight = "600";
+    var sValue = showModalDialog(url, window, 
+    "dialogWidth:" + swidth + "px;dialogHeight:" + sheight + "px;help:no;status:no");
+    if(sValue!=undefined){
+    	alert(sValue);
+    }
+}
+
+	  function checkSame(form,atom,check){
+        for (i=0;i<form.kcId.length;i++){
+                var aText=form.kcId[i].value;
+                var bText=atom.value;
+                if (aText.substring(0,aText.indexOf("_"))==bText.substring(0,bText.indexOf("_"))){
+                        if (check==true){
+                                form.kcId[i].disabled=true;
+                        }else{
+                                form.kcId[i].disabled=false;
+                        }
+                }
+        }
+        atom.disabled=false;
+	}
+	function refreshYxkc(){
+      parent.document.getElementById("yxkcIfra").src="/zyxkAction.do?oper=yxkc&type=btx";
+      window.parent.m_sxxf();
+	}
+function m_ctkc(){
+    var url = '/bxXxBtxAction.do?actionType=6';
+    var swidth = "800";
+    var sheight = "600";
+    //window.open(url);
+    var sValue = showModalDialog(url, window, 
+    	"dialogWidth:" + swidth + "px;dialogHeight:" + sheight + "px;help:no;status:no");  
+    if(sValue != "undefined" ){
+        refreshYxkc();
+        parent.document.getElementById("bxkc_").src="/bxXxBtxAction.do?actionType=2";
+    }
+}	
+function xs(ori){
+	var flag = false;
+	var tflag = false;
+	var result ="";
+	for( var i=0; i<ori.length; i++){
+		if(i==0 && ori.charAt(i)!="<"){
+			result = ori;
+			break;
+		}else{
+		if("<"==ori.charAt(i)){
+			flag = true;
+			tflag = false;
+		}else if(">"==ori.charAt(i)){
+			tflag = true;
+		}
+		
+		if(!flag){
+			result += ori.charAt(i);
+		}
+		if(tflag){
+			flag = false;
+		}
+		}
+	}
+	alert(result);
+}
+    // 验证码
+    function m_sxyzm(){  
+       	var url = "bxXxBtxAction.do?actionType=9";  
+           var request = new Ajax.Request(url, {method:"post",onComplete:yzmOnComplete});   
+           var readyState  = request.transport.readyState ;   
+           if(readyState != 4) {   
+				//$("loading").style.display = "block";  
+           }   		   
+	}  
+    function yzmOnComplete(transport) {   
+            var readyState = transport.readyState;   
+            if(readyState == 4) {    
+                if(transport.status == 200) {   
+                    //$("loading").style.display = "none";   
+                }   
+            }   
+            a = transport.responseText; 
+            var yzm_div = document.getElementById("yzm_div"); 
+            if(a.indexOf("true") != -1){
+	    		yzm_div.innerHTML = "<b>验证码：</b><input type='text' name='v_yzm' size='6' title='验证码' alt='notnull'>&emsp;"
+	    			+"<img id='vchart' height='20' width='80' src='/validateCodeAction.do?random=100'>&nbsp;&nbsp;"
+	    			+"<a href='#' onclick='m_changeOne();'>换一张</a>&nbsp;&nbsp;";  
+            }else{
+            	yzm_div.innerHTML = "<input type='hidden' name='v_yzm'>";
+            }
+    }
+    function m_checkyzm(){  
+       	var url = "bxXxBtxAction.do?actionType=10&v_yzm="+$('v_yzm').value;  
+           var request = new Ajax.Request(url, {method:"post",onComplete:checkYzmOnComplete});   
+           var readyState  = request.transport.readyState ;   
+           if(readyState != 4) {   
+				//$("loading").style.display = "block";  
+           }   		   
+	}  
+    function checkYzmOnComplete(transport) {   
+           var readyState = transport.readyState;   
+           if(readyState == 4) {    
+               if(transport.status == 200) {   
+                   //$("loading").style.display = "none";   
+               }   
+           }   
+           a = transport.responseText;     
+		  if(a.indexOf("false") != -1){
+           	alert("请输入正确的验证码！");
+           	return;
+           }
+           m_submit();
+    }   
+	function m_changeOne(){
+	    document.getElementById("vchart").src="/validateCodeAction.do?random="+Math.random();
+	}     
+    window.onload = function(){
+    	m_sxyzm();
+    }    
+</SCRIPT>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.16428"></HEAD>
+<BODY style="OVERFLOW: auto" leftMargin=0 topMargin=0 marginheight="0" 
+marginwidth="0">
+<FORM method=post name=bxkForm><INPUT type=hidden value=bxq name=ifraType> 
+<TABLE id=tblHead class=title cellSpacing=0 cellPadding=0 width="100%" 
+  border=0><TBODY>
+  <TR>
+    <TD width="50%"></TD>
+    <TD width="50%">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" align=left border=0>
+        <TBODY>
+        <TR>
+          <TD id=yzm_div width="88%" align=right>&nbsp; </TD>
+          <TD width=10 align=center><IMG src="bxXxBtxAction_files/space.gif"> 
+          </TD>
+          <TD width=20><IMG onclick=savexk(); title=提交 style="CURSOR: hand" 
+            src="bxXxBtxAction_files/tj.gif" align=center> </TD>
+          <TD width=5></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+  <TR>
+    <TD class=Linetop></TD></TR></TBODY></TABLE><!-- 列表开始 -->
+<TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=pageAlign>
+      <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 width="100%" 
+      border=0>
+        <THEAD>
+        <TR>
+          <TH class=sortable width="4%">选择</TH>
+          <TH class=sortable width="8%">课程号</TH>
+          <TH class=sortable width="24%">课程名</TH>
+          <TH class=sortable width="4%">课序<BR>号</TH>
+          <TH class=sortable width="8%">属性</TH>
+          <TH class=sortable width="4%">考试<BR>类型</TH>
+          <TH class=sortable width="15%">教师</TH>
+          <TH class=sortable width="4%">课余<BR>量</TH>
+          <TH class=sortable width="4%">学分</TH>
+          <TH class=sortable width="25%">选课限制说明</TH></TR></THEAD>
+        <TBODY>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> </TD>
+          <TD align=center>80L132Q</TD>
+          <TD align=center><IMG onclick=openMenu(0) id=plus_0 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L132Q')" ?>汇编与接口技术</A> </TD>
+          <TD align=center>05 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>刘铭* </TD>
+          <TD align=center>36 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科必修、信息安全（保密技术）限选课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_0 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>2 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF308</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>4</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF308</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> </TD>
+          <TD align=center>80L132Q</TD>
+          <TD align=center><IMG onclick=openMenu(1) id=plus_1 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L132Q')" ?>汇编与接口技术</A> </TD>
+          <TD align=center>03 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>赵宏智* </TD>
+          <TD align=center>1 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科必修、信息安全（保密技术）限选课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_1 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>1</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>第十七号教学楼</TD>
+                      <TD width=120 align=center>203</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>3</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>第十七号教学楼</TD>
+                      <TD width=120 
+              align=center>203</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> <FONT 
+            color=red>无余量</FONT> </TD>
+          <TD align=center>80L132Q</TD>
+          <TD align=center><IMG onclick=openMenu(2) id=plus_2 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L132Q')" ?>汇编与接口技术</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>李济生* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科必修、信息安全（保密技术）限选课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_2 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>1</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>第十七号教学楼</TD>
+                      <TD width=120 align=center>201</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>3</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>第十七号教学楼</TD>
+                      <TD width=120 
+              align=center>201</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> <FONT 
+            color=red>无余量</FONT> </TD>
+          <TD align=center>80L132Q</TD>
+          <TD align=center><IMG onclick=openMenu(3) id=plus_3 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L132Q')" ?>汇编与接口技术</A> </TD>
+          <TD align=center>04 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>吴为民* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科必修、信息安全（保密技术）限选课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_3 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>2 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF309</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>4</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF309</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> </TD>
+          <TD align=center>80L157Q</TD>
+          <TD align=center><IMG onclick=openMenu(4) id=plus_4 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L157Q')" ?>数据库系统原理</A> </TD>
+          <TD align=center>03 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>张玉洁* </TD>
+          <TD align=center>38 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 
+            ;2014级计科、计科（铁路信息技术）、信息安全、信息安全（保密技术）、知行1404必修课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_4 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>思源西楼</TD>
+                      <TD width=120 align=center>SX501</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>5</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>思源西楼</TD>
+                      <TD width=120 
+              align=center>SX501</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> <FONT 
+            color=red>无余量</FONT> </TD>
+          <TD align=center>80L157Q</TD>
+          <TD align=center><IMG onclick=openMenu(5) id=plus_5 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L157Q')" ?>数据库系统原理</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>王宁* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 
+            ;2014级计科、计科（铁路信息技术）、信息安全、信息安全（保密技术）、知行1404必修课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_5 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF603</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>5</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF603</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> <FONT 
+            color=red>无余量</FONT> </TD>
+          <TD align=center>80L157Q</TD>
+          <TD align=center><IMG onclick=openMenu(6) id=plus_6 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L157Q')" ?>数据库系统原理</A> </TD>
+          <TD align=center>02 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>徐薇* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 
+            ;2014级计科、计科（铁路信息技术）、信息安全、信息安全（保密技术）、知行1404必修课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_6 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF209</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>5</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF209</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>选中</FONT> <FONT 
+            color=red>无余量</FONT> </TD>
+          <TD align=center>80L157Q</TD>
+          <TD align=center><IMG onclick=openMenu(7) id=plus_7 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L157Q')" ?>数据库系统原理</A> </TD>
+          <TD align=center>04 </TD>
+          <TD align=center>必修 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>林友芳* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>4.0 </TD>
+          <TD align=center>允许修读类型 主修 
+            ;2014级计科、计科（铁路信息技术）、信息安全、信息安全（保密技术）、知行1404必修课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_7 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>思源西楼</TD>
+                      <TD width=120 align=center>SX502</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>5</TD>
+                      <TD align=center>1 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>思源西楼</TD>
+                      <TD width=120 
+              align=center>SX502</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><INPUT 
+            onclick=checkSame(this.form,this,this.checked); type=checkbox 
+            value=80L019Q_01 name=kcId> </TD>
+          <TD align=center>80L019Q</TD>
+          <TD align=center><IMG onclick=openMenu(8) id=plus_8 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L019Q')" ?>计算机图形学</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>限选 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>刘渭滨* </TD>
+          <TD align=center>4 </TD>
+          <TD align=center>2.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科、计科（铁路信息技术）、生医限选，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_8 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-8周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>5 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF513</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-8周上</TD>
+                      <TD align=center>5</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF513</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><INPUT 
+            onclick=checkSame(this.form,this,this.checked); type=checkbox 
+            value=80L114Q_01 name=kcId> </TD>
+          <TD align=center>80L114Q</TD>
+          <TD align=center><IMG onclick=openMenu(9) id=plus_9 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L114Q')" ?>多媒体技术(B)</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>限选 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>倪蓉蓉* </TD>
+          <TD align=center>2 </TD>
+          <TD align=center>2.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科、计科（铁路信息技术）、2013级物联网限选，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_9 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-8周上</TD>
+                      <TD align=center>1</TD>
+                      <TD align=center>6 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF208</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-8周上</TD>
+                      <TD align=center>4</TD>
+                      <TD align=center>6 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF208</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>无余量</FONT> </TD>
+          <TD align=center>80L163Q</TD>
+          <TD align=center><IMG onclick=openMenu(10) id=plus_10 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L163Q')" ?>嵌入式系统设计</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>限选 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>高金山* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>2.0 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科、计科（铁路信息技术）限选课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_10 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-11周上</TD>
+                      <TD align=center>2</TD>
+                      <TD align=center>6 , 7 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>第九教学楼</TD>
+                      <TD width=120 
+              align=center>北402</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><FONT color=red>无余量</FONT> </TD>
+          <TD align=center>80L358Q</TD>
+          <TD align=center><IMG onclick=openMenu(11) id=plus_11 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80L358Q')" ?>算法分析与设计</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>限选 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>李清勇* </TD>
+          <TD align=center>0 </TD>
+          <TD align=center>2.0 </TD>
+          <TD align=center>允许修读类型 主修 
+            ;2014级计科、计科（铁路信息技术）、信息安全、信息安全（保密技术）限选，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_11 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>1-16周上</TD>
+                      <TD align=center>3</TD>
+                      <TD align=center>4 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF104</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" class=odd>
+          <TD align=center><INPUT 
+            onclick=checkSame(this.form,this,this.checked); type=checkbox 
+            value=80S353Q_01 name=kcId> </TD>
+          <TD align=center>80S353Q</TD>
+          <TD align=center><IMG onclick=openMenu(12) id=plus_12 
+            style="CURSOR: hand; BORDER-TOP: 0px; HEIGHT: 18px; BORDER-RIGHT: 0px; WIDTH: 16px; BORDER-BOTTOM: 0px; BORDER-LEFT: 0px" 
+            src="bxXxBtxAction_files/plus.gif" align=absMiddle> <A 
+            href="javascript:kcxx('80S353Q')" ?>程序设计专题训练Ⅲ</A> </TD>
+          <TD align=center>01 </TD>
+          <TD align=center>限选 </TD>
+          <TD align=center>考试 </TD>
+          <TD align=center>瞿有利* </TD>
+          <TD align=center>9 </TD>
+          <TD align=center>1.5 </TD>
+          <TD align=center>允许修读类型 主修 ;2014级计科、信息安全、信息安全（保密技术）限选课，其他同学慎选 </TD>
+        <TR onmouseover="this.className='evenfocus';" 
+        onmouseout="this.className='even';" id=tr_12 class=odd 
+        style="DISPLAY: none">
+          <TD colSpan=2></TD>
+          <TD width="80%" colSpan=8>
+            <TABLE class=titleTop2 cellSpacing=0 cellPadding=0 width="100%" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD>
+                  <TABLE id=user class=displayTag cellSpacing=1 cellPadding=0 
+                  width="100%" border=0>
+                    <THEAD>
+                    <TR>
+                      <TD class=sortable>周次</TD>
+                      <TD class=sortable>星期</TD>
+                      <TD class=sortable>节次</TD>
+                      <TD class=sortable>校区</TD>
+                      <TD class=sortable>教学楼</TD>
+                      <TD class=sortable>教室</TD></TR></THEAD>
+                    <TBODY>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>9-16周上</TD>
+                      <TD align=center>1</TD>
+                      <TD align=center>5 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 align=center>YF204</TD></TR>
+                    <TR onmouseover="this.className='evenfocus';" 
+                    onmouseout="this.className='even';" class=odd>
+                      <TD align=center>9,11,13,15周上</TD>
+                      <TD align=center>4</TD>
+                      <TD align=center>6 </TD>
+                      <TD width=60 align=center>主校区</TD>
+                      <TD width=120 align=center>逸夫教学楼</TD>
+                      <TD width=120 
+              align=center>YF204</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></FORM></BODY></HTML>
