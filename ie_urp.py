@@ -112,7 +112,7 @@ def getCode(rand_code):
     print picName
     im = Image.open(picName)
     #裁切图片
-    region = (1160,0,1248,26)
+    region = (1160,0,1245,26)
     cropImg = im.crop(region)
     bg = Image.new("RGB", cropImg.size, (255,255,255))
     bg.paste(cropImg,cropImg)
@@ -126,18 +126,15 @@ def getCode(rand_code):
         else:
             table.append(1)
     bg = bg.point(table, '1')
-    # bg.save('urp.jpg')
-    # bg = Image.open('urp.jpg')
     bg.show()
     v_yzm =image_to_string(bg)
-    # print 'raw:' + v_yzm
     v_yzm = v_yzm.replace('NN','W')
     v_yzm = v_yzm.replace('?','f')
     v_yzm = v_yzm.replace('|','l')
     v_yzm = v_yzm.replace('_','')
     pattern = re.compile('\W')
     v_yzm = re.sub(pattern,'',v_yzm)
-    
+    print v_yzm
     if len(v_yzm) == 4:
         return v_yzm
     else:
@@ -157,7 +154,7 @@ while True and not isFind:
    driver.get(url_dic[choice])
    checkbox = driver.find_elements_by_tag_name('input')
    for it in checkbox:
-     class_id = '80L163Q' + '_01'
+     class_id = '80L019Q' + '_01'
      if it.get_attribute('value') == class_id:
         print class_id + ' is avalable!' 
         isFind = True
@@ -165,32 +162,48 @@ while True and not isFind:
         it.click()
         # winsound.PlaySound('C4_explosion_03.wav',winsound.SND_LOOP)
         break
-
-# yzm_textArea = driver.find_elements_by_tag_name('input')[2]
+oriLen = len(driver.find_elements_by_tag_name('input'))
+yzm_textArea = driver.find_elements_by_tag_name('input')[1]
+# for index, it in enumerate(yzm_textArea):
+#     print str(index) + ':'
+#     print it.get_attribute('name')
+# yzm_textArea.send_keys('1234')
 # print yzm_textArea.get_attribute('title')
 #提交成功
 isOK = False
 tryTime = 0
 # 处理验证码
 while not isOK and tryTime < 10:
+    driver.get(url_dic[choice])
+    checkbox = driver.find_elements_by_tag_name('input')
+    for it in checkbox:
+        class_id = '80L019Q' + '_01'
+        if it.get_attribute('value') == class_id:
+            print class_id + ' is avalable!' 
+            isFind = True
+            #点击选框
+            it.click()
     v_yzm = ''
-
     while len(v_yzm) != 4:
         driver.find_element_by_link_text('换一张').click()
+        ran_code = random.random()
+        driver.save_screenshot('F:\\Python Sourse File\\temp\\urp_' + str(ran_code))
+        v_yzm = getCode(ran_code)
         time.sleep(0.1)
-            
-    ran_code = random.random()
-    driver.save_screenshot('F:\\Python Sourse File\\temp\\urp_' + str(ran_code))
-    v_yzm = getCode(ran_code)
+    
     yzm_textArea.send_keys(v_yzm)
     driver.find_elements_by_tag_name('img')[2].click()
-    alert = driver.switch_to_alert()
-    response = alert.text
-
-    if response.find(u'成功'):
-        isOK = True
-    else:
+    try:
+        alert = driver.switch_to_alert()
         alert.accept()
+        #检查是否成功选课
+        nowLen = len(driver.find_elements_by_tag_name('input'))
+        if nowLen != oriLen:
+            isOK = True
+        else:
+            pass
+    except Exception as e:
+        pass
     tryTime += 1
 
 #删除临时文件
