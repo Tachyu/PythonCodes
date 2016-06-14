@@ -10,7 +10,11 @@ Desktop.ini
 *.egg-info
 dist
 build
+temp
+.vscode
+html
 
 # My configurations:
 db.ini
 deploy_key_rsa
+*.jpg
